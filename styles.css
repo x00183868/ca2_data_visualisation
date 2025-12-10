@@ -71,3 +71,18 @@ body { padding-top: 72px; }
   body { padding-top: 64px; }
 }
 
+/* Profile photo sizing and fallback */
+.profile-photo { width: 160px; height: 160px; object-fit: cover; display: inline-block; }
+.avatar-fallback {
+  width: 160px;
+  height: 160px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  background: #e9ecef;
+  color: #1f2937;
+  font-weight: 700;
+  font-size: 40px;
+  border-radius: 50%;
+}
+
