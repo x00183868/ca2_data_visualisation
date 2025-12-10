@@ -93,7 +93,5 @@ body { padding-top: 72px; }
 .year-card h4 { margin-top: 0; }
 
 /* GPA input row */
-.gpa-row { display: flex; align-items: center; gap: .5rem; }
-.gpa-row .gpa-input { width: 120px; max-width: 40%; }
-.gpa-saved { min-width: 48px; font-size: 0.9rem; }
+/* (GPA input styles removed) */
 
