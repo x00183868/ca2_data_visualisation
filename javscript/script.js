@@ -40,12 +40,42 @@ function animateSkills() {
     // only animate once (use htmlBar as sentinel if present, otherwise first available)
     const sentinel = htmlBar || jsBar || ciscoBar || pythonBar || m365Bar || vscodeBar;
     if (!sentinel.classList.contains('animated')) {
-        if (htmlBar) { htmlBar.style.width = '90%'; htmlBar.classList.add('animated'); }
-        if (jsBar) { jsBar.style.width = '75%'; jsBar.classList.add('animated'); }
-        if (ciscoBar) { ciscoBar.style.width = '65%'; ciscoBar.classList.add('animated'); }
-        if (pythonBar) { pythonBar.style.width = '80%'; pythonBar.classList.add('animated'); }
-        if (m365Bar) { m365Bar.style.width = '70%'; m365Bar.classList.add('animated'); }
-        if (vscodeBar) { vscodeBar.style.width = '85%'; vscodeBar.classList.add('animated'); }
+        if (htmlBar) {
+            htmlBar.style.width = '90%';
+            htmlBar.classList.add('animated');
+            htmlBar.setAttribute('aria-valuenow', '90');
+            const pv = htmlBar.querySelector('.progress-value'); if (pv) pv.textContent = '90%';
+        }
+        if (jsBar) {
+            jsBar.style.width = '75%';
+            jsBar.classList.add('animated');
+            jsBar.setAttribute('aria-valuenow', '75');
+            const pv = jsBar.querySelector('.progress-value'); if (pv) pv.textContent = '75%';
+        }
+        if (ciscoBar) {
+            ciscoBar.style.width = '65%';
+            ciscoBar.classList.add('animated');
+            ciscoBar.setAttribute('aria-valuenow', '65');
+            const pv = ciscoBar.querySelector('.progress-value'); if (pv) pv.textContent = '65%';
+        }
+        if (pythonBar) {
+            pythonBar.style.width = '80%';
+            pythonBar.classList.add('animated');
+            pythonBar.setAttribute('aria-valuenow', '80');
+            const pv = pythonBar.querySelector('.progress-value'); if (pv) pv.textContent = '80%';
+        }
+        if (m365Bar) {
+            m365Bar.style.width = '70%';
+            m365Bar.classList.add('animated');
+            m365Bar.setAttribute('aria-valuenow', '70');
+            const pv = m365Bar.querySelector('.progress-value'); if (pv) pv.textContent = '70%';
+        }
+        if (vscodeBar) {
+            vscodeBar.style.width = '85%';
+            vscodeBar.classList.add('animated');
+            vscodeBar.setAttribute('aria-valuenow', '85');
+            const pv = vscodeBar.querySelector('.progress-value'); if (pv) pv.textContent = '85%';
+        }
     }
 }
 

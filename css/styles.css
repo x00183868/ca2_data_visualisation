@@ -49,6 +49,11 @@ body { padding-top: 72px; }
   transition: width 1s ease;
 }
 
+/* show percentage text centered inside progress bar */
+.progress-bar { display: flex; align-items: center; justify-content: center; position: relative; }
+.progress-bar .progress-value { color: #fff; font-weight: 600; font-size: 0.85rem; pointer-events: none; }
+.dark-mode .progress-bar .progress-value { color: #031025; text-shadow: none; }
+
 
 /* Filter buttons */
 .filter-btn.active { background-color: #0d6efd; color: #fff; border-color: #0d6efd; }
