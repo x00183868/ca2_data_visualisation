@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hospital Waiting Room Project</title>
+
+    <!-- BOOTSTRAP -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- CUSTOM BLUE THEME -->
+    <style>
+        h2 {
+            border-left: 6px solid #0d6efd;
+            padding-left: 12px;
+            margin-top: 40px;
+            margin-bottom: 20px;
+            font-weight: 600;
+        }
+        .section-box {
+            background: rgba(0, 110, 255, 0.06);
+            border-left: 4px solid #0d6efd;
+            padding: 20px;
+            border-radius: 6px;
+        }
+        img {
+            border: 2px solid #0d6efd;
+        }
+    </style>
+
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+
+<!-- NAVBAR -->
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+    <div class="container-fluid">
+        <a class="navbar-brand" href="index.html">Home</a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav ms-auto">
+                <li class="nav-item"><a class="nav-link" href="education.html">Education</a></li>
+                <li class="nav-item"><a class="nav-link" href="projects.html">Projects</a></li>
+                <li class="nav-item"><a class="nav-link" href="contact.html">Contact</a></li>
+            </ul>
+        </div>
+    </div>
+</nav>
+
+<!-- HEADER -->
+<header class="py-5 text-center text-white" style="background:#0d6efd;">
+    <h1>Hospital Waiting Room System</h1>
+    <p class="lead">A real-time healthcare tracking system developed in Year 2</p>
+</header>
+
+<div class="container my-5">
+
+    <!-- PROJECT OVERVIEW -->
+    <section>
+        <h2>Project Overview</h2>
+        <div class="section-box">
+            <p>
+                This system was created to monitor patient flow and waiting room activity inside a hospital environment.
+                Patients arriving at reception are checked in by a receptionist, who may grant or deny access based on 
+                their medical issues. Once granted access, a digital tag is assigned to the patient containing metadata 
+                such as Tag ID, Location ID and timestamp.
+            </p>
+            <p>
+                Sensors detect these tags as patients move through hospital areas. The system updates patient logs, 
+                calculates waiting time and triggers status changes (Vacant, Busy or Crowded). After the patient is finished, 
+                the receptionist checks them out and updates the record database.
+            </p>
+        </div>
+    </section>
+
+    <!-- USE CASE DIAGRAM -->
+    <section>
+        <h2>Use Case Diagram</h2>
+        <img src="use-case1.jpeg" class="img-fluid rounded shadow mb-3" alt="Use Case Diagram">
+    </section>
+
+    <!-- WORKFLOW DIAGRAM -->
+    <section>
+        <h2>Workflow Diagram</h2>
+        <img src="workflow.png" class="img-fluid rounded shadow mb-3" alt="Workflow Diagram">
+    </section>
+
+    <!-- ERD -->
+    <section>
+        <h2>Entity Relationship Diagram (ERD)</h2>
+        <img src="erd1.png" class="img-fluid rounded shadow mb-3" alt="ERD Diagram">
+    </section>
+
+    <!-- SQL DATABASE -->
+    <section>
+        <h2>SQL Database Structure</h2>
+        <img src="sql1.png" class="img-fluid rounded shadow mb-3" alt="SQL Structure Screenshot">
+    </section>
+
+    <!-- MQTT SECTION -->
+    <section>
+        <h2>MQTT Messaging System</h2>
+        <div class="section-box">
+            <p>
+                MQTT was used for real-time event updates as patients moved through the hospital. 
+                The system published live messages using <code>mosquitto_pub</code> and stored the received data into the 
+                SQL database, which was later displayed on the dashboard.
+            </p>
+        </div>
+        <img src="mqtt1.png" class="img-fluid rounded shadow mb-3">
+        <img src="mqqt2.png" class="img-fluid rounded shadow mb-3">
+        <img src="mqqt3.png" class="img-fluid rounded shadow mb-3">
+    </section>
+
+    <!-- WEB INTERFACE -->
+    <section>
+        <h2>Web Interface</h2>
+        <p>The system displayed real-time data for patients and their movements inside the hospital.</p>
+
+        <img src="webpage.png" class="img-fluid rounded shadow mb-3">
+        <img src="webpage2.png" class="img-fluid rounded shadow mb-3">
+        <img src="webpage3.png" class="img-fluid rounded shadow mb-3">
+        <img src="webpage4.png" class="img-fluid rounded shadow mb-3">
+        <img src="webpage5.png" class="img-fluid rounded shadow mb-3">
+    </section>
+
+    <!-- WHAT I LEARNED -->
+    <section>
+        <h2>What I Learned</h2>
+        <div class="section-box">
+            <ul>
+                <li>Developing user-focused healthcare solutions</li>
+                <li>Building relational SQL database systems</li>
+                <li>Using MQTT for real-time event tracking</li>
+                <li>Creating dashboards that display live data</li>
+                <li>Understanding hospital workflow structures</li>
+                <li>Writing and testing backend data processing scripts</li>
+            </ul>
+        </div>
+    </section>
+
+</div>
+
+<!-- FOOTER -->
+<footer class="text-center py-3 bg-dark text-white">
+    © 2025 Therly Kabasele — Hospital Waiting Room System
+</footer>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
