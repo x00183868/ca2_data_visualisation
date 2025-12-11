@@ -1,0 +1,23 @@
+[
+  {
+    "employer": "Company One",
+    "logo": "images/logos/logo1.svg",
+    "role": "IT Support Intern",
+    "dates": "Jun 2022 – Aug 2022",
+    "details": "Provided first-line technical support, performed system maintenance, and assisted with user onboarding."
+  },
+  {
+    "employer": "Company Two",
+    "logo": "images/logos/logo2.svg",
+    "role": "Student Technician",
+    "dates": "Sep 2021 – May 2022",
+    "details": "Assisted with device provisioning, troubleshooting, and documentation for the IT team."
+  },
+  {
+    "employer": "Company Three",
+    "logo": "images/logos/logo3.svg",
+    "role": "Work Placement - IT Operations",
+    "dates": "Jun 2021 – Aug 2021",
+    "details": "Supported operations tasks including monitoring, ticket triage, and small automation tasks."
+  }
+]
