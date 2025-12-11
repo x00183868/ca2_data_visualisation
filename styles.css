@@ -97,3 +97,14 @@ body { padding-top: 72px; }
 .year-gpa span { color: #0d6efd; cursor: pointer; }
 .year-gpa span.placeholder { color: #6c757d; cursor: default; }
 
+/* Show dropdown on hover for larger screens */
+@media (min-width: 992px) {
+  .navbar .dropdown:hover .dropdown-menu {
+    display: block;
+    margin-top: 0;
+  }
+  /* slight indicator rotation on hover */
+  .navbar .dropdown-toggle::after { transition: transform .2s ease; }
+  .navbar .dropdown:hover .dropdown-toggle::after { transform: rotate(180deg); }
+}
+
