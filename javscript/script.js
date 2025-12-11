@@ -130,6 +130,13 @@ document.addEventListener('DOMContentLoaded', () => {
         const navLinks = document.querySelectorAll('.navbar-nav a');
         navLinks.forEach(a => {
             const href = a.getAttribute('href') || '';
+            // special-case old "projects.html" links (these files don't exist)
+            if (href.endsWith('projects.html')) {
+                // if on a subpage, point back to index anchor, else use in-page anchor
+                if (inHtmlFolder) a.setAttribute('href', '../index.html#projects');
+                else a.setAttribute('href', '#projects');
+                return;
+            }
             // anchors (#...) should point to root index when on subpages
             if (href.startsWith('#')) {
                 if (inHtmlFolder) a.setAttribute('href', '../index.html' + href);
