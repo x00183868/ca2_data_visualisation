@@ -194,32 +194,56 @@ document.addEventListener('DOMContentLoaded', () => {
             container.innerHTML = '<div class="alert alert-warning">Work experience file present but empty.</div>';
             return;
         }
-        const list = document.createElement('div');
-        list.className = 'list-group work-list';
-        data.forEach(job => {
-            const logoUrl = job.logo ? (job.logo.startsWith('http') ? job.logo : base + job.logo) : base + 'images/logos/placeholder.png';
-            const item = document.createElement('div');
-            item.className = 'list-group-item work-item';
+        // Render as a Bootstrap accordion so each company expands to show details and skills
+        const accordion = document.createElement('div');
+        accordion.className = 'accordion work-list';
+        accordion.id = 'workExperienceAccordion';
+        data.forEach((job, idx) => {
             const safeEmployer = escapeHtml(job.employer || '');
             const safeRole = escapeHtml(job.role || '');
             const safeDates = escapeHtml(job.dates || '');
             const safeDetails = escapeHtml(job.details || '');
-            // Render role + employer with logo at the end of the title line
+
+            // choose logo: prefer explicit job.logo, otherwise try common filenames by employer
+            let logoPath = job.logo || '';
+            if (!logoPath) {
+                if (/hse/i.test(job.employer || '')) logoPath = 'images/hse_logo.jpg';
+                else if (/ladbrok/i.test(job.employer || '')) logoPath = 'images/ladbrokes.png';
+            }
+            const logoUrl = logoPath ? (logoPath.startsWith('http') ? logoPath : base + logoPath) : '';
+
+            const item = document.createElement('div');
+            item.className = 'accordion-item';
+            const itemId = `work-item-${idx}`;
+            const headerId = `heading-${idx}`;
+            const collapseId = `collapse-${idx}`;
+
             item.innerHTML = `\
-                <div class="d-flex align-items-center justify-content-between">\
-                    <div>\
-                        <h5 class=\"mb-1\">${safeRole} <small class=\"text-muted\">— ${safeEmployer}</small></h5>\
+                <h2 class=\"accordion-header\" id=\"${headerId}\">\
+                    <button class=\"accordion-button collapsed d-flex align-items-center justify-content-between\" type=\"button\" data-bs-toggle=\"collapse\" data-bs-target=\"#${collapseId}\" aria-expanded=\"false\" aria-controls=\"${collapseId}\">\
+                        <div class=\"d-flex align-items-center gap-3\">\
+                            <div>\
+                                <strong>${safeRole}</strong> <small class=\"text-muted\">— ${safeEmployer}</small>\
+                            </div>\
+                        </div>\
+                        <div class=\"ms-3\">\
+                            ${logoUrl ? `<img src=\"${logoUrl}\" class=\"work-logo rounded\" alt=\"${safeEmployer}\" onerror=\"this.style.display='none'\">` : ''}\
+                        </div>\
+                    </button>\
+                </h2>\
+                <div id=\"${collapseId}\" class=\"accordion-collapse collapse\" aria-labelledby=\"${headerId}\" data-bs-parent=\"#workExperienceAccordion\">\
+                    <div class=\"accordion-body\">\
+                        <div class=\"text-muted small mb-2\">${safeDates}</div>\
+                        <div>${safeDetails}</div>\
+                        <!-- skills can be added under a skills list in the JSON as an array (optional) -->\
+                        ${Array.isArray(job.skills) && job.skills.length ? `<hr><div><strong>Key skills:</strong> ${escapeHtml(job.skills.join(', '))}</div>` : ''}\
                     </div>\
-                    <div class=\"ms-3\">\
-                        <img src=\"${logoUrl}\" class=\"work-logo rounded\" alt=\"${safeEmployer}\" onerror=\"this.style.display='none'\">\
-                    </div>\
-                </div>\
-                <div class=\"text-muted small mb-2\">${safeDates}</div>\
-                <div>${safeDetails}</div>`;
-            list.appendChild(item);
+                </div>`;
+
+            accordion.appendChild(item);
         });
         container.innerHTML = '';
-        container.appendChild(list);
+        container.appendChild(accordion);
     }
 
     function escapeHtml(s) {

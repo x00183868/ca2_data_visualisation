@@ -151,7 +151,7 @@ body { padding-top: 72px; }
 /* Work experience list styles */
 .work-list { margin-top: 1rem; }
 .work-item { padding: 0.75rem 1rem; }
-.work-logo { width: 48px; height: 48px; object-fit: contain; flex-shrink: 0; }
+.work-logo { width: 36px; height: 36px; object-fit: contain; flex-shrink: 0; }
 .work-item h5 { margin-bottom: 0.25rem; }
 .work-item .small { font-size: 0.9rem; }
 
