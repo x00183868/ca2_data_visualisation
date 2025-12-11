@@ -132,3 +132,19 @@ body { padding-top: 72px; }
   .modal .img-fluid, .carousel .img-fluid { max-height: 55vh; }
 }
 
+/* NAVBAR spacing fixes to avoid stretched or wrapped words
+   - prevent brand and links from wrapping
+   - ensure consistent small horizontal spacing between links
+*/
+.navbar .navbar-brand, .navbar .nav-link {
+  white-space: nowrap;
+}
+.navbar .nav-link {
+  padding-left: 0.6rem;
+  padding-right: 0.6rem;
+}
+/* add small gap between nav items for modern browsers */
+@media (min-width: 768px) {
+  .navbar .navbar-nav { gap: 0.5rem; }
+}
+
