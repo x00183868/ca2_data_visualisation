@@ -1,5 +1,13 @@
 [
   {
+    "employer": "Ladbrokes, Newbridge, Co. Kildare",
+    "logo": "images/ladbrokes.png",
+    "role": "Student Technician",
+    "dates": "Sep 2021 – May 2022",
+    "details": "Assisted with device provisioning, troubleshooting, and documentation for the IT team.",
+    "skills": []
+  },
+  {
     "employer": "HSE AI & Automation CoE (Dr. Steevens)",
     "logo": "images/hse_logo.jpg",
     "role": "IT Support Intern / Automation",
@@ -15,16 +23,8 @@
     ]
   },
   {
-    "employer": "Ladbrokes, Newbridge, Co. Kildare",
-    "logo": "images/ladbrokes.png",
-    "role": "Student Technician",
-    "dates": "Sep 2021 – May 2022",
-    "details": "Assisted with device provisioning, troubleshooting, and documentation for the IT team.",
-    "skills": []
-  },
-  {
     "employer": "Zazzle Ireland (Remote)",
-    "logo": "images/logos/logo_uploaded_3.svg",
+    "logo": "images/zazzle.png",
     "role": "Work Placement - IT Operations",
     "dates": "Jun 2021 – Aug 2021",
     "details": "Supported operations tasks including monitoring, ticket triage, and small automation tasks.",
