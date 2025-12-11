@@ -31,12 +31,21 @@ document.addEventListener('DOMContentLoaded', () => {
 function animateSkills() {
     const htmlBar = document.getElementById('htmlBar');
     const jsBar = document.getElementById('jsBar');
-    if (!htmlBar || !jsBar) return;
-    if (!htmlBar.classList.contains('animated')) {
-        htmlBar.style.width = '90%';
-        jsBar.style.width = '75%';
-        htmlBar.classList.add('animated');
-        jsBar.classList.add('animated');
+    const ciscoBar = document.getElementById('ciscoBar');
+    const pythonBar = document.getElementById('pythonBar');
+    const m365Bar = document.getElementById('m365Bar');
+    const vscodeBar = document.getElementById('vscodeBar');
+    if (!htmlBar && !jsBar && !ciscoBar && !pythonBar && !m365Bar && !vscodeBar) return;
+
+    // only animate once (use htmlBar as sentinel if present, otherwise first available)
+    const sentinel = htmlBar || jsBar || ciscoBar || pythonBar || m365Bar || vscodeBar;
+    if (!sentinel.classList.contains('animated')) {
+        if (htmlBar) { htmlBar.style.width = '90%'; htmlBar.classList.add('animated'); }
+        if (jsBar) { jsBar.style.width = '75%'; jsBar.classList.add('animated'); }
+        if (ciscoBar) { ciscoBar.style.width = '65%'; ciscoBar.classList.add('animated'); }
+        if (pythonBar) { pythonBar.style.width = '80%'; pythonBar.classList.add('animated'); }
+        if (m365Bar) { m365Bar.style.width = '70%'; m365Bar.classList.add('animated'); }
+        if (vscodeBar) { vscodeBar.style.width = '85%'; vscodeBar.classList.add('animated'); }
     }
 }
 
