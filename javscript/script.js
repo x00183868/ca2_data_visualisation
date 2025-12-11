@@ -172,6 +172,12 @@ document.addEventListener('DOMContentLoaded', () => {
     const base = inHtmlFolder ? '../' : '';
     const dataPath = base + 'data/work_experience.json';
 
+    // If a page-included global variable exists, use it (works when opening file://)
+    if (window.__workExperienceData && Array.isArray(window.__workExperienceData)) {
+        populateWorkExperience(container, window.__workExperienceData, base);
+        return;
+    }
+
     fetch(dataPath)
         .then(r => { if (!r.ok) throw new Error('no-data'); return r.json(); })
         .then(data => populateWorkExperience(container, data, base))
@@ -179,7 +185,7 @@ document.addEventListener('DOMContentLoaded', () => {
             // leave the helpful placeholder already present in HTML, but add a small note
             const note = document.createElement('div');
             note.className = 'mt-2 small text-muted';
-            note.textContent = `Tip: place ${dataPath} with a JSON array of job objects to auto-fill this section.`;
+            note.textContent = `Tip: place ${dataPath} with a JSON array of job objects to auto-fill this section, or run a local static server to enable fetching.`;
             container.appendChild(note);
         });
 
