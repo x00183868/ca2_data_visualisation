@@ -1,23 +1,33 @@
 [
   {
-    "employer": "Company One",
-    "logo": "images/logos/logo_uploaded_1.svg",
-    "role": "IT Support Intern",
+    "employer": "HSE AI & Automation CoE (Dr. Steevens)",
+    "logo": "images/hse_logo.jpg",
+    "role": "IT Support Intern / Automation",
     "dates": "Jun 2022 – Aug 2022",
-    "details": "Provided first-line technical support, performed system maintenance, and assisted with user onboarding."
+    "details": "Provided automation, RPA support, AI governance and Power Platform development across HSE projects.",
+    "skills": [
+      "Automation Workflow Design",
+      "AI Governance & Risk Analysis",
+      "Microsoft Power Platform",
+      "RPA Support & Troubleshooting",
+      "Dynamics 365 Case Management",
+      "Documentation & Compliance"
+    ]
   },
   {
-    "employer": "Company Two",
-    "logo": "images/logos/logo_uploaded_2.svg",
+    "employer": "Ladbrokes, Newbridge, Co. Kildare",
+    "logo": "images/ladbrokes.png",
     "role": "Student Technician",
     "dates": "Sep 2021 – May 2022",
-    "details": "Assisted with device provisioning, troubleshooting, and documentation for the IT team."
+    "details": "Assisted with device provisioning, troubleshooting, and documentation for the IT team.",
+    "skills": []
   },
   {
-    "employer": "Company Three",
+    "employer": "Zazzle Ireland (Remote)",
     "logo": "images/logos/logo_uploaded_3.svg",
     "role": "Work Placement - IT Operations",
     "dates": "Jun 2021 – Aug 2021",
-    "details": "Supported operations tasks including monitoring, ticket triage, and small automation tasks."
+    "details": "Supported operations tasks including monitoring, ticket triage, and small automation tasks.",
+    "skills": []
   }
 ]
