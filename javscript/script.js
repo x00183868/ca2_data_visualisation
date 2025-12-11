@@ -164,3 +164,61 @@ document.addEventListener('DOMContentLoaded', () => {
 });
 
 
+// WORK EXPERIENCE: populate an in-page list from a JSON file when available
+document.addEventListener('DOMContentLoaded', () => {
+    const container = document.getElementById('workExperienceList');
+    if (!container) return;
+    const inHtmlFolder = window.location.pathname.split('/').includes('html');
+    const base = inHtmlFolder ? '../' : '';
+    const dataPath = base + 'data/work_experience.json';
+
+    fetch(dataPath)
+        .then(r => { if (!r.ok) throw new Error('no-data'); return r.json(); })
+        .then(data => populateWorkExperience(container, data, base))
+        .catch(() => {
+            // leave the helpful placeholder already present in HTML, but add a small note
+            const note = document.createElement('div');
+            note.className = 'mt-2 small text-muted';
+            note.textContent = `Tip: place ${dataPath} with a JSON array of job objects to auto-fill this section.`;
+            container.appendChild(note);
+        });
+
+    function populateWorkExperience(container, data, base) {
+        if (!Array.isArray(data) || data.length === 0) {
+            container.innerHTML = '<div class="alert alert-warning">Work experience file present but empty.</div>';
+            return;
+        }
+        const list = document.createElement('div');
+        list.className = 'list-group work-list';
+        data.forEach(job => {
+            const logoUrl = job.logo ? (job.logo.startsWith('http') ? job.logo : base + job.logo) : base + 'images/logos/placeholder.png';
+            const item = document.createElement('div');
+            item.className = 'list-group-item work-item';
+            const safeEmployer = escapeHtml(job.employer || '');
+            const safeRole = escapeHtml(job.role || '');
+            const safeDates = escapeHtml(job.dates || '');
+            const safeDetails = escapeHtml(job.details || '');
+            // Render role + employer with logo at the end of the title line
+            item.innerHTML = `\
+                <div class="d-flex align-items-center justify-content-between">\
+                    <div>\
+                        <h5 class=\"mb-1\">${safeRole} <small class=\"text-muted\">— ${safeEmployer}</small></h5>\
+                    </div>\
+                    <div class=\"ms-3\">\
+                        <img src=\"${logoUrl}\" class=\"work-logo rounded\" alt=\"${safeEmployer}\" onerror=\"this.style.display='none'\">\
+                    </div>\
+                </div>\
+                <div class=\"text-muted small mb-2\">${safeDates}</div>\
+                <div>${safeDetails}</div>`;
+            list.appendChild(item);
+        });
+        container.innerHTML = '';
+        container.appendChild(list);
+    }
+
+    function escapeHtml(s) {
+        return String(s).replace(/[&<>"']/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
+    }
+});
+
+
