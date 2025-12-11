@@ -116,4 +116,45 @@ document.addEventListener('DOMContentLoaded', () => {
     if (btns.mailto) btns.mailto.addEventListener('click', () => { window.location.href = `mailto:${recipient}`; modal.hide(); });
 });
 
+// NAVBAR link normalizer: makes navbar links work whether the page is in root or /html/
+document.addEventListener('DOMContentLoaded', () => {
+    try {
+        const inHtmlFolder = window.location.pathname.split('/').includes('html');
+        // normalize brand link
+        const brand = document.querySelector('.navbar-brand');
+        if (brand) {
+            if (inHtmlFolder) brand.setAttribute('href', '../index.html');
+            else brand.setAttribute('href', '#hero');
+        }
+
+        const navLinks = document.querySelectorAll('.navbar-nav a');
+        navLinks.forEach(a => {
+            const href = a.getAttribute('href') || '';
+            // anchors (#...) should point to root index when on subpages
+            if (href.startsWith('#')) {
+                if (inHtmlFolder) a.setAttribute('href', '../index.html' + href);
+                // else leave as-is
+                return;
+            }
+            // links already pointing into html/ should be adjusted when on subpages
+            if (href.startsWith('html/')) {
+                if (inHtmlFolder) {
+                    // from /html/ page, remove html/ prefix
+                    a.setAttribute('href', href.replace(/^html\//, ''));
+                }
+                return;
+            }
+            // plain filenames (education.html, internship.html, etc.) should point to html/ when on root
+            if (/^[A-Za-z0-9_\-]+\.html$/.test(href)) {
+                if (!inHtmlFolder) a.setAttribute('href', 'html/' + href);
+                // if inHtmlFolder, leave as-is (they are sibling pages)
+                return;
+            }
+            // other hrefs (external, anchors with path) leave alone
+        });
+    } catch (e) {
+        console.warn('Navbar normalization failed', e);
+    }
+});
+
 
