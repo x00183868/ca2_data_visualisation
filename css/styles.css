@@ -232,6 +232,17 @@ body { padding-top: 72px; }
 .navbar .nav-link {
   padding-left: 0.6rem;
   padding-right: 0.6rem;
+  transition: background-color 0.3s ease, color 0.3s ease;
+  border-radius: 0.25rem;
+}
+/* Navbar link hover effects */
+.navbar .nav-link:hover {
+  background-color: rgba(255, 255, 255, 0.1);
+  color: #ffffff !important;
+}
+.navbar .nav-link.active {
+  background-color: rgba(255, 255, 255, 0.15);
+  color: #ffffff !important;
 }
 /* add small gap between nav items for modern browsers */
 @media (min-width: 768px) {
