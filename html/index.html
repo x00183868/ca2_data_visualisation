@@ -27,30 +27,23 @@
 <!-- ========================================================= -->
 <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
     <div class="container">
-        <a class="navbar-brand fw-bold" href="#">Therly Kabasele</a>
-
-        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navMenu">
+    <a class="navbar-brand fw-bold" href="#">Therly Kabasele</a>
+    <!-- Dark mode toggle in navbar corner -->
+    <button class="btn btn-outline-light ms-3 d-none d-lg-inline-flex" id="navDarkToggle" type="button" onclick="toggleDarkMode()" aria-label="Toggle dark mode">🌙</button>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
         </button>
-
-        <div class="collapse navbar-collapse" id="navMenu">
+        <div class="collapse navbar-collapse" id="navbarNav">
             <ul class="navbar-nav ms-auto">
-                <li class="nav-item"><a class="nav-link" href="#hero">Home</a></li>
                 <li class="nav-item"><a class="nav-link" href="#about">About</a></li>
-                <li class="nav-item"><a class="nav-link" href="education.html">Education</a></li>
-                <li class="nav-item dropdown">
-                    <a class="nav-link dropdown-toggle" href="#projects" id="projectsDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                        Projects
-                    </a>
-                    <ul class="dropdown-menu" aria-labelledby="projectsDropdown">
-                        <li><a class="dropdown-item" href="#projects">All Projects</a></li>
-                        <li><a class="dropdown-item" href="2nd_year_project.html">2nd Year Project</a></li>
-                    </ul>
-                </li>
-                <!-- Internship removed from top-level nav — available under Projects dropdown -->
+                <li class="nav-item"><a class="nav-link" href="#projects">Projects</a></li>
+                <li class="nav-item"><a class="nav-link" href="#experience">Experience</a></li>
                 <li class="nav-item"><a class="nav-link" href="#skills">Skills</a></li>
                 <li class="nav-item"><a class="nav-link" href="#hobbies">Hobbies</a></li>
                 <li class="nav-item"><a class="nav-link" href="#contact">Contact</a></li>
+                <li class="nav-item"><a class="nav-link" href="deliverables.html">Deliverables</a></li>
+                <!-- mobile-visible toggle -->
+                <li class="nav-item d-lg-none"><button class="btn btn-outline-light w-100 mt-2" type="button" onclick="toggleDarkMode()">Toggle Dark Mode</button></li>
             </ul>
         </div>
     </div>
@@ -65,29 +58,141 @@
         <h1 class="fw-bold">Therly Kabasele</h1>
         <h4 class="text-muted">Computing With IT Management Student</h4>
 
-        <button class="btn btn-primary mt-3" onclick="toggleDarkMode()">Toggle Dark Mode</button>
+    <!-- moved dark mode toggle into navbar -->
     </div>
 </section>
 
 <!-- ========================================================= -->
-<!-- ABOUT -->
-<!-- ========================================================= -->
-<section id="about" class="py-5">
-    <div class="container">
-        <h2 class="fw-bold mb-4">About Me</h2>
         <p>
-            I am a final-year Computing With IT Management student at TU Dublin with a strong interest in 
-            cloud technologies, automation, data visualisation, and user-focused system design. 
-            I enjoy building digital solutions that are efficient, scalable, and meaningful to users.
-        </p>
-    </div>
-</section>
+                    </div>
+                </div>
+            </div>
+        </div>
+            </h2>
+            <div id="collapseOne" class="accordion-collapse collapse" aria-labelledby="headingOne" data-bs-parent="#educationAccordion">
+                <div class="accordion-body year-card">
+                    <div class="row">
+                        <div class="col-md-6">
+                            <h4 class="fw-semibold">Semester 1</h4>
+                            <ul>
+                                <li>French - <strong>B</strong></li>
+                                <li>Computing Architecture – <strong>C+</strong></li>
+                                <li>Critical Skills Development – <strong>C+</strong></li>
+                                <li>Discrete Mathematics 1 – <strong>C</strong></li>
+                                <li>Software Development 1 - <strong>C</strong></li>
+                                <li>Visual Design & User Exeperience - <strong>D</strong></li>
+                            </ul>
+                        </div>
+                        <div class="col-md-6">
+                            <h4 class="fw-semibold">Semester 2</h4>
+                            <ul>
+                                <li>French 2 - <strong>A</strong></li>
+                                <li>Database Fundamentals – <strong>C+</strong></li>
+                                <li>Operating Systems Fundamentals - <strong>C+</strong></li>
+                                <li>Software Development 2 – <strong>C</strong></li>
+                                <li>Statistics - <strong>C</strong></li>
+                                <li>Systems Analysis – <strong>C</strong></li>
+                            </ul>
+                        </div>
 
-<!-- ========================================================= -->
-<!-- EDUCATION -->
-<!-- ========================================================= -->
-<!-- EDUCATION (moved to its own page: education.html) -->
-<!-- ========================================================= -->
+        
+                                <li>IT Scripting & Automation - <strong>D</strong></li>
+                            </ul>
+                        </div>
+                        <div class="col-md-6">
+                            <h4 class="fw-semibold">Semester 2</h4>
+                            <ul>
+                                <li>Data Administration and Analysis – <strong>C</strong></li>
+                                <li>Management Science - <strong>C</strong></li>
+                                <li>Routing & Switching Essentials – <strong>C</strong></li>
+                                <LI>Project - <strong>C</strong></LI>
+                                <li>Information Security – <strong>D</strong></li>
+                                <li>IT Service Management - <strong>D</strong></li>
+                            </ul>
+                        </div>
+                    </div>
+                    <p class="year-gpa mt-3">GPA: <span id="gpa-year-2-display">2.10</span></p>
+                </div>
+            </div>
+        </div>
+
+        <!-- 3rd Year -->
+        <div class="accordion-item">
+            <h2 class="accordion-header" id="headingThree">
+                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+                    3rd Year
+                </button>
+            </h2>
+            <div id="collapseThree" class="accordion-collapse collapse" aria-labelledby="headingThree" data-bs-parent="#educationAccordion">
+                <div class="accordion-body year-card">
+                    <div class="row">
+                        <div class="col-md-6">
+                            <h4 class="fw-semibold">Semester 1</h4>
+                            <ul>
+                                <li>Advanced Routing & Switching – <strong>C</strong></li>
+                                <li>Big Data Technologies – <strong>C-</strong></li>
+                                <li>Operating Systems – <strong>C</strong></li>
+                                <li>Server-Side Web Development - <strong>C</strong></li>
+                                <li>Cloud Services & Distributed Computing - <strong>C</strong></li>
+                                <li>Innovation & Entrepreneurship - <strong>C</strong></li>
+
+
+                            </ul>
+                        </div>
+                        <div class="col-md-6">
+                            <h4 class="fw-semibold">Semester 2</h4>
+                            <ul>
+                                <li>Experimental Learning – <strong>PS</strong></li>
+                            </ul>
+                        </div>
+                    </div>
+                    <p class="year-gpa mt-3">GPA: <span id="gpa-year-3-display">2.00</span></p>
+                </div>
+            </div>
+        </div>
+
+        <!-- 4th Year -->
+        <div class="accordion-item">
+            <h2 class="accordion-header" id="headingFour">
+                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseFour" aria-expanded="false" aria-controls="collapseFour">
+                    4th Year
+                </button>
+            </h2>
+            <div id="collapseFour" class="accordion-collapse collapse" aria-labelledby="headingFour" data-bs-parent="#educationAccordion">
+                <div class="accordion-body year-card">
+                    <div class="row">
+                        <div class="col-md-6">
+                            <h4 class="fw-semibold">Semester 1</h4>
+                            <ul>
+                                <li>Private Cloud Architecture – <strong>Pending</strong></li>
+                                <li>Systems Operations & Developing on the Public Cloud – <strong>Pending</strong></li>
+                                <li>Enterprise Performance Architecture – <strong>Pending</strong></li>
+                                <li>Interactive Media Design & Virtualisation - <strong>Pending</strong></li>
+                                <li>DevOps - Continuous Integration and Deployment - <strong>Pending</strong></li>
+                                <li>Final Year Project Cloud - <strong>Pending</strong></li>
+                            </ul>
+                        </div>
+                        <div class="col-md-6">
+                            <h4 class="fw-semibold">Semester 2</h4>
+                            <ul>
+                                <li>Systems Operations & Developing on the Public Cloud – <strong>Pending</strong></li>
+                                <li>Final Year Project Cloud – <strong>Pending</strong></li>
+                                <li>Digital Technology Strategy – <strong>Pending</strong></li>
+                                <li>Human Skills - <strong>Pending</strong></li>
+                                <li>Operations Research - <strong>Pending</strong></li>
+                                <li>Security for the cloud and IoT - <strong>Pending</strong></li>
+                                <li>Advanced Cloud Provisioning & Networking - <strong>Pending</strong></li>
+                            </ul>
+                        </div>
+                    </div>
+                    <p class="year-gpa mt-3">GPA: <span id="gpa-year-4-display">-</span></p>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+</section>
 
 <!-- ========================================================= -->
 <!-- PROJECTS -->
@@ -105,37 +210,111 @@
     </div>
 
     <div class="row g-4" id="projectContainer">
-
-        <div class="col-md-4 project-card" data-year="2">
-            <a href="2nd_year_project.html" class="text-decoration-none text-reset">
-                <div class="card h-100">
-                    <div class="card-body">
-                        <h5 class="card-title">2nd Year Project</h5>
-                        <p class="card-text">Hospital Waiting Room - Click for more</p>
+            <!-- 2nd Year: Bigger project card with key info (moved into Projects section) -->
+            <div class="col-lg-4 col-md-6 project-card" data-year="2">
+                <div class="card h-100 shadow-sm project-card-lg">
+                    <div class="card-body d-flex flex-column">
+                        <div class="d-flex align-items-center mb-3">
+                            <span class="badge bg-primary me-2">2nd Year</span>
+                            <h5 class="card-title mb-0">Hospital Waiting Room System</h5>
+                        </div>
+                        <p class="card-text text-muted">Real-time hospital tracking: receptionist check-in/out, tagged patient flow, sensor-detected movement, and status updates (Vacant/Busy/Crowded) backed by SQL.</p>
+                        <div class="mt-2">
+                            <div class="small text-uppercase text-muted">Tech Stack</div>
+                            <ul class="list-inline mb-2 small">
+                                <li class="list-inline-item badge badge-tech-html">HTML</li>
+                                <li class="list-inline-item badge badge-tech-css">CSS</li>
+                                <li class="list-inline-item badge badge-tech-js">JavaScript</li>
+                                <li class="list-inline-item badge badge-tech-bootstrap">Bootstrap</li>
+                                <li class="list-inline-item badge badge-tech-sql">SQL</li>
+                                <li class="list-inline-item badge badge-tech-mqtt">MQTT</li>
+                            </ul>
+                        </div>
+                        <div class="mt-2">
+                            <div class="small text-uppercase text-muted">Highlights</div>
+                            <ul class="small mb-3">
+                                <li>Receptionist-driven check-in/out with tagged patients</li>
+                                <li>Sensor-based updates and waiting time calculation</li>
+                                <li>Live MQTT messages persisted into SQL and shown on dashboards</li>
+                            </ul>
+                        </div>
+                        <div class="mt-auto d-flex justify-content-between align-items-center">
+                            <span class="small text-muted">Year 2</span>
+                        </div>
                     </div>
                 </div>
-            </a>
-        </div>
+            </div>
 
-        <div class="col-md-4 project-card" data-year="3">
-            <a href="3rd_year_project.html" class="text-decoration-none text-reset">
-                <div class="card h-100">
-                    <div class="card-body">
-                        <h5 class="card-title">3rd Year Project</h5>
-                        <p class="card-text">Work Placement Details - Click for more</p>
+            <!-- 3rd Year: Bigger project card with key info (moved into Projects section) -->
+            <div class="col-lg-4 col-md-6 project-card" data-year="3">
+                <div class="card h-100 shadow-sm project-card-lg">
+                    <div class="card-body d-flex flex-column">
+                        <div class="d-flex align-items-center mb-3">
+                            <span class="badge bg-primary me-2">3rd Year</span>
+                            <h5 class="card-title mb-0">Internship – HSE AI & Automation</h5>
+                        </div>
+                        <p class="card-text text-muted">Worked across automation workflows, AI governance/compliance, RPA operations and Dynamics 365 case support for the HSE AI & Automation CoE.</p>
+                        <div class="mt-2">
+                            <div class="small text-uppercase text-muted">Tech Stack</div>
+                            <ul class="list-inline mb-2 small">
+                                <li class="list-inline-item badge badge-tech-power-automate">Power Automate</li>
+                                <li class="list-inline-item badge badge-tech-forms">Microsoft Forms</li>
+                                <li class="list-inline-item badge badge-tech-excel">Excel</li>
+                                <li class="list-inline-item badge badge-tech-onedrive">OneDrive</li>
+                                <li class="list-inline-item badge badge-tech-dynamics">Dynamics 365</li>
+                            </ul>
+                        </div>
+                        <div class="mt-2">
+                            <div class="small text-uppercase text-muted">Highlights</div>
+                            <ul class="small mb-3">
+                                <li>Built Power Automate flows for data capture and reporting</li>
+                                <li>Supported RPA incident lifecycles and selector investigations</li>
+                                <li>Contributed to AI governance and HSE AI Inventory assessments</li>
+                            </ul>
+                        </div>
+                        <div class="mt-auto d-flex justify-content-between align-items-center">
+                            <span class="small text-muted">Year 3</span>
+                        </div>
                     </div>
                 </div>
-            </a>
-        </div>
+            </div>
 
-        <div class="col-md-4 project-card" data-year="4">
-            <div class="card h-100">
-                <div class="card-body">
-                    <h5 class="card-title">4th Year Project</h5>
-                    <p class="card-text">Final Year Project - Click for more</p>
+            <!-- 4th Year: Bigger project card with key info (moved into Projects section) -->
+            <div class="col-lg-4 col-md-6 project-card" data-year="4">
+                <div class="card h-100 shadow-sm project-card-lg">
+                    <div class="card-body d-flex flex-column">
+                        <div class="d-flex align-items-center mb-3">
+                            <span class="badge bg-primary me-2">4th Year</span>
+                            <h5 class="card-title mb-0">Odoo Helpdesk for TUD Health</h5>
+                        </div>
+                        <p class="card-text text-muted">Configured a cloud-based helpdesk in Odoo for a hospital setting: teams, ticket stages, communication channels and dashboards with KPIs.</p>
+                        <div class="mt-2">
+                            <div class="small text-uppercase text-muted">Tech Stack</div>
+                            <ul class="list-inline mb-2 small">
+                                <li class="list-inline-item badge badge-tech-odoo">Odoo (Cloud)</li>
+                                <li class="list-inline-item badge badge-tech-helpdesk">Helpdesk</li>
+                                <li class="list-inline-item badge badge-tech-discuss">Discuss</li>
+                                <li class="list-inline-item badge badge-tech-dashboards">Dashboards</li>
+                            </ul>
+                        </div>
+                        <div class="mt-2">
+                            <div class="small text-uppercase text-muted">Highlights</div>
+                            <ul class="small mb-3">
+                                <li>Helpdesk teams, SLA targets, ticket categories and KPIs</li>
+                                <li>Internal communication channels and reporting views</li>
+                                <li>Ticket lifecycle via list, kanban and analytics</li>
+                            </ul>
+                        </div>
+                        <div class="mt-auto d-flex justify-content-between align-items-center">
+                            <span class="small text-muted">Year 4</span>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
+        
+
+        
 
     </div>
   </div>
@@ -168,12 +347,13 @@
                 // Inline fallback for file:// viewing — logos mapped as requested:
                 // Company One -> Ladbrokes, Company Two -> HSE, Company Three -> Zazzle
                 window.__workExperienceData = [
-                    {"employer":"Ladbrokes, Newbridge, Co. Kildare","logo":"images/ladbrokes.png","role":"Student Technician","dates":"Sep 2021 – May 2022","details":"Assisted with device provisioning, troubleshooting, and documentation for the IT team."},
-                    {"employer":"HSE AI & Automation CoE (Dr. Steevens)","logo":"images/hse_logo.jpg","role":"IT Support Intern / Automation","dates":"Jun 2022 – Aug 2022","details":"Provided automation, RPA support, AI governance and Power Platform development across HSE projects."},
-                    {"employer":"Zazzle Ireland (Remote)","logo":"images/zazzle.png","role":"Work Placement - IT Operations","dates":"Jun 2021 – Aug 2021","details":"Supported operations tasks including monitoring, ticket triage, and small automation tasks."}
+                    {"employer":"Ladbrokes, Newbridge, Co. Kildare","logo":"images/ladbrokes.png","role":"Customer Service Manager","dates":"Sep 2021 – May 2022","details":"","skills":["Operating tills, bet stations and cash handling","Submitted betting slips and payouts","Handling money and customer data responsibly","Using the shop’s betting terminals, touchscreen systems, and online betting software"]},
+                    {"employer":"HSE AI & Automation CoE (Dr. Steevens)","logo":"images/hse_logo.jpg","role":"IT Support Intern / Automation","dates":"Jun 2022 – Aug 2022","details":"","skills":["Automation Workflow Design","AI Governance & Risk Analysis","Microsoft Power Platform","RPA Support & Troubleshooting","Dynamics 365 Case Management","Documentation & Compliance"]},
+                    {"employer":"Zazzle Ireland (Remote)","logo":"images/zazzle.png","role":"Customer Service Representative","dates":"Jun 2021 – Aug 2021","details":"","skills":["Handled customer queries across phone, email, chat, and social media","Processed orders, tracked deliveries, and resolved discrepancies","Assisted with training and mentoring new agents"]}
                 ];
             </script>
-        </div>
+                </div>
+            </div>
     </section>
 
 <!-- ========================================================= -->

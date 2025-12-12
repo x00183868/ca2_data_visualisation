@@ -18,6 +18,8 @@ function toggleDarkMode() {
     // derive current theme and persist
     const theme = document.body.classList.contains('dark-mode') ? 'dark' : 'light';
     localStorage.setItem('theme', theme);
+    // sync navbar toggle icon
+    syncDarkToggleIcon();
     // runtime test: confirm function is invoked
     console.log('toggleDarkMode invoked — theme:', theme);
 }
@@ -25,7 +27,20 @@ function toggleDarkMode() {
 // Apply stored theme on DOM ready
 document.addEventListener('DOMContentLoaded', () => {
     if (localStorage.getItem('theme') === 'dark') document.body.classList.add('dark-mode');
+    // set icon based on stored theme
+    syncDarkToggleIcon();
 });
+
+// Update the navbar toggle icon to reflect current theme
+function syncDarkToggleIcon() {
+    try {
+        const btn = document.getElementById('navDarkToggle');
+        if (!btn) return;
+        const isDark = document.body.classList.contains('dark-mode');
+        btn.textContent = isDark ? '☀️' : '🌙';
+        btn.setAttribute('aria-label', isDark ? 'Switch to light mode' : 'Switch to dark mode');
+    } catch (e) { /* no-op */ }
+}
 
 // SKILLS PROGRESS
 function animateSkills() {
@@ -44,37 +59,49 @@ function animateSkills() {
             htmlBar.style.width = '90%';
             htmlBar.classList.add('animated');
             htmlBar.setAttribute('aria-valuenow', '90');
-            const pv = htmlBar.querySelector('.progress-value'); if (pv) pv.textContent = '90%';
+            let pv = htmlBar.querySelector('.progress-value');
+            if (!pv) { pv = document.createElement('span'); pv.className = 'progress-value'; htmlBar.appendChild(pv); }
+            pv.textContent = '90%';
         }
         if (jsBar) {
             jsBar.style.width = '75%';
             jsBar.classList.add('animated');
             jsBar.setAttribute('aria-valuenow', '75');
-            const pv = jsBar.querySelector('.progress-value'); if (pv) pv.textContent = '75%';
+            let pv = jsBar.querySelector('.progress-value');
+            if (!pv) { pv = document.createElement('span'); pv.className = 'progress-value'; jsBar.appendChild(pv); }
+            pv.textContent = '75%';
         }
         if (ciscoBar) {
             ciscoBar.style.width = '65%';
             ciscoBar.classList.add('animated');
             ciscoBar.setAttribute('aria-valuenow', '65');
-            const pv = ciscoBar.querySelector('.progress-value'); if (pv) pv.textContent = '65%';
+            let pv = ciscoBar.querySelector('.progress-value');
+            if (!pv) { pv = document.createElement('span'); pv.className = 'progress-value'; ciscoBar.appendChild(pv); }
+            pv.textContent = '65%';
         }
         if (pythonBar) {
             pythonBar.style.width = '80%';
             pythonBar.classList.add('animated');
             pythonBar.setAttribute('aria-valuenow', '80');
-            const pv = pythonBar.querySelector('.progress-value'); if (pv) pv.textContent = '80%';
+            let pv = pythonBar.querySelector('.progress-value');
+            if (!pv) { pv = document.createElement('span'); pv.className = 'progress-value'; pythonBar.appendChild(pv); }
+            pv.textContent = '80%';
         }
         if (m365Bar) {
             m365Bar.style.width = '70%';
             m365Bar.classList.add('animated');
             m365Bar.setAttribute('aria-valuenow', '70');
-            const pv = m365Bar.querySelector('.progress-value'); if (pv) pv.textContent = '70%';
+            let pv = m365Bar.querySelector('.progress-value');
+            if (!pv) { pv = document.createElement('span'); pv.className = 'progress-value'; m365Bar.appendChild(pv); }
+            pv.textContent = '70%';
         }
         if (vscodeBar) {
             vscodeBar.style.width = '85%';
             vscodeBar.classList.add('animated');
             vscodeBar.setAttribute('aria-valuenow', '85');
-            const pv = vscodeBar.querySelector('.progress-value'); if (pv) pv.textContent = '85%';
+            let pv = vscodeBar.querySelector('.progress-value');
+            if (!pv) { pv = document.createElement('span'); pv.className = 'progress-value'; vscodeBar.appendChild(pv); }
+            pv.textContent = '85%';
         }
     }
 }
@@ -275,7 +302,13 @@ document.addEventListener('DOMContentLoaded', () => {
                         <div class=\"text-muted small mb-2\">${safeDates}</div>\
                         <div>${safeDetails}</div>\
                         <!-- skills can be added under a skills list in the JSON as an array (optional) -->\
-                        ${Array.isArray(job.skills) && job.skills.length ? `<hr><div><strong>Key skills:</strong> ${escapeHtml(job.skills.join(', '))}</div>` : ''}\
+                        ${Array.isArray(job.skills) && job.skills.length ? `\
+                            <hr>\
+                            <div><strong>Roles & skills:</strong></div>\
+                            <div class="mt-2 d-flex flex-wrap gap-2">\
+                                ${job.skills.map(s => `<span class=\"badge bg-secondary\">${escapeHtml(s)}</span>`).join('')}\
+                            </div>\
+                        ` : ''}\
                     </div>\
                 </div>`;
 
