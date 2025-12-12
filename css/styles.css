@@ -320,7 +320,7 @@ body {
 }
 
 .navbar.bg-dark {
-  background-color: #192a51 !important;
+  background-color: #4a3b5c !important;
 }
 .dark-mode .navbar.bg-dark {
   background-color: #0b1220 !important;
@@ -334,12 +334,14 @@ body {
 }
 
 .accordion-button {
-  background-color: #f5e6e8;
+  background-color: #e8dce8;
   color: #192a51;
+  border: 1px solid #d5c6e0;
 }
 .accordion-button:not(.collapsed) {
-  background-color: #d5c6e0;
-  color: #192a51;
+  background-color: #967aa1;
+  color: #ffffff;
+  border-color: #967aa1;
 }
 .dark-mode .accordion-button {
   background-color: #10182b;
@@ -353,6 +355,7 @@ body {
 .accordion-body {
   background-color: #ffffff;
   color: #192a51;
+  border-top: 1px solid #d5c6e0;
 }
 .dark-mode .accordion-body {
   background-color: #0f1a33;
