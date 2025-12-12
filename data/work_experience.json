@@ -2,17 +2,22 @@
   {
     "employer": "Ladbrokes, Newbridge, Co. Kildare",
     "logo": "images/ladbrokes.png",
-    "role": "Customer Manager",
+    "role": "Customer Service Manager",
     "dates": "Sep 2021 – May 2022",
-    "details": "Assisted with device provisioning, troubleshooting, and documentation for the IT team.",
-    "skills": []
+    "details": "",
+    "skills": [
+      "Operating tills, bet stations and cash handling",
+      "Submitted betting slips and payouts",
+      "Handling money and customer data responsibly",
+      "Using the shop’s betting terminals, touchscreen systems, and online betting software"
+    ]
   },
   {
     "employer": "HSE AI & Automation CoE (Dr. Steevens)",
     "logo": "images/hse_logo.jpg",
     "role": "Intern in AI & Automation",
     "dates": "Jun 2022 – Aug 2022",
-    "details": "Provided automation, RPA support, AI governance and Power Platform development across HSE projects.",
+    "details": "",
     "skills": [
       "Automation Workflow Design",
       "AI Governance & Risk Analysis",
@@ -27,7 +32,11 @@
     "logo": "images/zazzle.png",
     "role": "Customer Service Representative",
     "dates": "Jun 2021 – Aug 2021",
-    "details": "Supported operations tasks including monitoring, ticket triage, and small automation tasks.",
-    "skills": []
+    "details": "",
+    "skills": [
+      "Handled customer queries across phone, email, chat, and social media",
+      "Processed orders, tracked deliveries, and resolved discrepancies",
+      "Assisted with training and mentoring new agents"
+    ]
   }
 ]
