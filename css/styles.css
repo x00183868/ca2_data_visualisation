@@ -446,6 +446,24 @@ body {
         .dark-mode #education h2 { color: #ffffff !important; }
         .dark-mode h2, .dark-mode h3 { color: #ffffff !important; }
 
+/* Piper's Hill College card styling */
+#education .card {
+  border: 1px solid rgba(150,122,161,0.2);
+}
+#education .card .card-title {
+  color: #192a51;
+  font-size: 1.25rem;
+}
+#education .card .card-subtitle {
+  font-size: 1rem;
+}
+.dark-mode #education .card .card-title {
+  color: #ffffff !important;
+}
+.dark-mode #education .card .card-subtitle {
+  color: #9fb4d8 !important;
+}
+
 /* Light mode color overrides for Bootstrap components */
 .btn-primary {
   background-color: #967aa1;
