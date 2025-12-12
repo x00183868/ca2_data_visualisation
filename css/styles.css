@@ -309,9 +309,12 @@ body { padding-top: 72px; }
 /* Remove gaps between accordion items */
 .accordion-item {
   border: 1px solid rgba(150,122,161,0.2);
+  background-color: #ffffff;
+  margin-bottom: 0 !important;
 }
-.accordion-item:not(:first-of-type) {
+.accordion-item + .accordion-item {
   border-top: 0;
+  margin-top: 0;
 }
 .accordion-item:first-of-type {
   border-top-left-radius: 0.375rem;
@@ -320,6 +323,9 @@ body { padding-top: 72px; }
 .accordion-item:last-of-type {
   border-bottom-left-radius: 0.375rem;
   border-bottom-right-radius: 0.375rem;
+}
+.accordion {
+  margin-bottom: 0;
 }
 
 /* GPA input row */
@@ -497,30 +503,34 @@ body {
 .accordion-button {
   background-color: #e8dce8;
   color: #192a51;
-  border: 1px solid #d5c6e0;
+  border: none;
 }
 .accordion-button:not(.collapsed) {
   background-color: #967aa1;
   color: #ffffff;
-  border-color: #967aa1;
+  border: none;
 }
 .dark-mode .accordion-button {
   background-color: #10182b;
   color: #e6eef6;
+  border: none;
 }
 .dark-mode .accordion-button:not(.collapsed) {
   color: #e6eef6;
   background-color: #0f1a33;
+  border: none;
 }
 
 .accordion-body {
   background-color: #ffffff;
   color: #192a51;
-  border-top: 1px solid #d5c6e0;
+  border-top: none;
+  border: none;
 }
 .dark-mode .accordion-body {
   background-color: #0f1a33;
   color: #cfe1ff;
+  border: none;
 }
 
 .badge.bg-secondary {
