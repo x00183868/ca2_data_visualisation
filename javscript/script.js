@@ -288,12 +288,10 @@ document.addEventListener('DOMContentLoaded', () => {
                 <h2 class=\"accordion-header\" id=\"${headerId}\">\
                     <button class=\"accordion-button collapsed d-flex align-items-center justify-content-between\" type=\"button\" data-bs-toggle=\"collapse\" data-bs-target=\"#${collapseId}\" aria-expanded=\"false\" aria-controls=\"${collapseId}\">\
                         <div class=\"d-flex align-items-center gap-3\">\
+                            ${logoUrl ? `<img src=\"${logoUrl}\" class=\"work-logo rounded\" alt=\"${safeEmployer}\" onerror=\"this.style.display='none'\">` : ''}\
                             <div>\
                                 <strong>${safeRole}</strong> <small class=\"text-muted\">— ${safeEmployer}</small>\
                             </div>\
-                        </div>\
-                        <div class=\"ms-3\">\
-                            ${logoUrl ? `<img src=\"${logoUrl}\" class=\"work-logo rounded\" alt=\"${safeEmployer}\" onerror=\"this.style.display='none'\">` : ''}\
                         </div>\
                     </button>\
                 </h2>\
