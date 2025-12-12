@@ -177,6 +177,10 @@ body { padding-top: 72px; }
   background-color: #0f1a33; 
   color: #d6e2ff; 
 }
+.dark-mode .accordion-item { 
+  background-color: #10182b; 
+  border-color: rgba(255,255,255,0.08);
+}
 
 /* Dark mode alerts */
 .dark-mode .alert-info { 
@@ -302,6 +306,22 @@ body { padding-top: 72px; }
 }
 .year-card h4 { margin-top: 0; }
 
+/* Remove gaps between accordion items */
+.accordion-item {
+  border: 1px solid rgba(150,122,161,0.2);
+}
+.accordion-item:not(:first-of-type) {
+  border-top: 0;
+}
+.accordion-item:first-of-type {
+  border-top-left-radius: 0.375rem;
+  border-top-right-radius: 0.375rem;
+}
+.accordion-item:last-of-type {
+  border-bottom-left-radius: 0.375rem;
+  border-bottom-right-radius: 0.375rem;
+}
+
 /* GPA input row */
 .year-gpa { font-weight: 600; color: #192a51; }
 .year-gpa span { color: #967aa1; cursor: pointer; }
@@ -381,6 +401,19 @@ body { padding-top: 72px; }
 .work-logo { width: 36px; height: 36px; object-fit: contain; flex-shrink: 0; }
 .work-item h5 { margin-bottom: 0.25rem; }
 .work-item .small { font-size: 0.9rem; }
+
+/* Work experience accordion - remove gaps */
+#workExperienceAccordion .accordion-item {
+  background-color: #ffffff;
+  border: 1px solid rgba(150,122,161,0.2);
+}
+#workExperienceAccordion .accordion-item:not(:first-of-type) {
+  border-top: 0;
+}
+.dark-mode #workExperienceAccordion .accordion-item {
+  background-color: #10182b;
+  border-color: rgba(255,255,255,0.08);
+}
 
 body {
             padding-top: 70px;
