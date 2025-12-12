@@ -130,36 +130,8 @@ document.addEventListener('DOMContentLoaded', () => {
     }));
 });
 
-// GPA displays
-function initGPADisplays() {
-    try {
-        for (let y = 1; y <= 4; y++) {
-            const el = document.getElementById(`gpa-year-${y}-display`);
-            if (!el) continue;
-            const key = `gpa-year-${y}`;
-            const saved = localStorage.getItem(key);
-            if (saved !== null && !isNaN(Number(saved))) {
-                el.textContent = Number(saved).toFixed(2);
-                el.classList.remove('placeholder');
-            } else {
-                el.textContent = '-';
-                el.classList.add('placeholder');
-            }
-            el.addEventListener('click', () => {
-                const cur = el.textContent === '-' ? '' : el.textContent;
-                const val = prompt(`Enter GPA for year ${y} (0.00 - 4.00):`, cur);
-                if (val === null) return;
-                const n = parseFloat(val);
-                if (isNaN(n) || n < 0 || n > 4) return alert('Please enter a number between 0.00 and 4.00');
-                const out = n.toFixed(2);
-                localStorage.setItem(key, out);
-                el.textContent = out;
-                el.classList.remove('placeholder');
-            });
-        }
-    } catch (e) { console.warn('initGPADisplays failed', e); }
-}
-document.addEventListener('DOMContentLoaded', initGPADisplays);
+// GPA displays - Simple static display (no editing functionality)
+// The GPA values are set directly in the HTML and displayed as-is
 
 // EMAIL CHOOSER
 document.addEventListener('DOMContentLoaded', () => {
