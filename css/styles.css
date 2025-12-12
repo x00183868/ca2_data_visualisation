@@ -125,33 +125,151 @@ body { padding-top: 72px; }
 .dark-mode section { background-color: transparent; }
 .dark-mode .container, .dark-mode .row, .dark-mode .col, .dark-mode .navbar-collapse { background-color: transparent; }
 .dark-mode .bg-light { background-color: #0f1a33 !important; }
-.dark-mode h1, .dark-mode h2, .dark-mode h3, .dark-mode h4, .dark-mode h5, .dark-mode h6 { color: #e6eef6; }
-.dark-mode p, .dark-mode li, .dark-mode span, .dark-mode label, .dark-mode .lead { color: #d6e2ff; }
+
+/* Dark mode headings - ensure they're bright and readable */
+.dark-mode h1, .dark-mode h2, .dark-mode h3, .dark-mode h4, .dark-mode h5, .dark-mode h6 { 
+  color: #ffffff !important; 
+  font-weight: 600;
+}
+.dark-mode .fw-bold { color: #ffffff !important; }
+
+/* Dark mode text elements */
+.dark-mode p, .dark-mode li, .dark-mode label, .dark-mode .lead { color: #d6e2ff; }
+.dark-mode span { color: #d6e2ff; }
 .dark-mode .text-muted { color: #9fb4d8 !important; }
+
+/* Dark mode links */
 .dark-mode a { color: #9ec1ff; }
 .dark-mode a:hover { color: #cfe1ff; }
-.dark-mode .navbar .nav-link { color: #cfe1ff; }
+
+/* Dark mode navbar */
+.dark-mode .navbar-brand { color: #ffffff !important; }
+.dark-mode .navbar .nav-link { color: #d6e2ff; }
 .dark-mode .navbar .nav-link:hover, .dark-mode .navbar .nav-link.active { color: #ffffff; }
-.dark-mode .year-card { background: #0f1a33; border-left-color: #6ea8fe; box-shadow: 0 2px 8px rgba(0,0,0,0.4); }
-.dark-mode .accordion-button { background-color: #10182b; color: #e6eef6; }
-.dark-mode .accordion-button:not(.collapsed) { color: #e6eef6; background-color: #0f1a33; }
-.dark-mode .accordion-body { background-color: #0f1a33; color: #cfe1ff; }
-.dark-mode .card { background-color: #10182b; color: #e6eef6; border-color: rgba(255,255,255,0.08); }
-.dark-mode .alert-info { background-color: rgba(110,168,254,0.12); color: #cfe1ff; border-color: rgba(110,168,254,0.25); }
-.dark-mode .badge.bg-secondary { background-color: #2b3b5d; color: #e6eef6; }
+
+/* Dark mode cards and year cards */
+.dark-mode .year-card { 
+  background: #0f1a33; 
+  border-left-color: #6ea8fe; 
+  box-shadow: 0 2px 8px rgba(0,0,0,0.4); 
+}
+.dark-mode .card { 
+  background-color: #10182b; 
+  color: #e6eef6; 
+  border-color: rgba(255,255,255,0.08); 
+}
+.dark-mode .card-title { color: #ffffff !important; }
+.dark-mode .card-text { color: #d6e2ff; }
+.dark-mode .card-body { color: #d6e2ff; }
+
+/* Dark mode accordion */
+.dark-mode .accordion-button { 
+  background-color: #10182b; 
+  color: #e6eef6; 
+  border-color: rgba(255,255,255,0.08);
+}
+.dark-mode .accordion-button:not(.collapsed) { 
+  color: #ffffff; 
+  background-color: #1a2847; 
+  border-color: #6ea8fe;
+}
+.dark-mode .accordion-body { 
+  background-color: #0f1a33; 
+  color: #d6e2ff; 
+}
+
+/* Dark mode alerts */
+.dark-mode .alert-info { 
+  background-color: rgba(110,168,254,0.15); 
+  color: #cfe1ff; 
+  border-color: rgba(110,168,254,0.3); 
+}
+
+/* Dark mode badges */
+.dark-mode .badge.bg-secondary { 
+  background-color: #2b3b5d; 
+  color: #e6eef6; 
+}
+
+/* Dark mode buttons */
+.dark-mode .btn-primary { 
+  background-color: #6ea8fe; 
+  border-color: #6ea8fe; 
+  color: #0b1220; 
+  font-weight: 600;
+}
+.dark-mode .btn-primary:hover { 
+  background-color: #8bb8ff; 
+  border-color: #8bb8ff; 
+  color: #0b1220; 
+}
+.dark-mode .btn-outline-light { 
+  border-color: #cfe1ff; 
+  color: #cfe1ff; 
+}
+.dark-mode .btn-outline-light:hover { 
+  background-color: #cfe1ff; 
+  color: #0b1220; 
+}
+.dark-mode .btn-link { 
+  color: #9ec1ff; 
+}
+
+/* Dark mode filter buttons */
+.dark-mode .filter-btn { 
+  border-color: #6ea8fe; 
+  color: #9ec1ff; 
+  background-color: transparent;
+}
+.dark-mode .filter-btn:hover { 
+  background-color: #6ea8fe; 
+  border-color: #6ea8fe; 
+  color: #0b1220; 
+}
+.dark-mode .filter-btn.active { 
+  background-color: #6ea8fe; 
+  color: #0b1220; 
+  border-color: #6ea8fe; 
+}
+
+/* Dark mode other UI components */
 .dark-mode hr { border-top-color: rgba(255,255,255,0.12); }
-.dark-mode .btn-primary { background-color: #6ea8fe; border-color: #6ea8fe; color: #0b1220; }
-.dark-mode .btn-primary:hover { background-color: #8bb8ff; border-color: #8bb8ff; color: #0b1220; }
-.dark-mode .btn-outline-light { border-color: #cfe1ff; color: #cfe1ff; }
-.dark-mode .btn-outline-light:hover { background-color: #cfe1ff; color: #0b1220; }
-/* Common UI components that remain light by default */
 .dark-mode .dropdown-menu { background-color: #10182b; color: #e6eef6; border-color: rgba(255,255,255,0.08); }
 .dark-mode .dropdown-item { color: #e6eef6; }
 .dark-mode .dropdown-item:hover { background-color: #0f1a33; color: #ffffff; }
 .dark-mode .modal-content { background-color: #10182b; color: #e6eef6; border-color: rgba(255,255,255,0.08); }
 .dark-mode .modal-header, .dark-mode .modal-footer { border-color: rgba(255,255,255,0.12); }
+.dark-mode .modal-title { color: #ffffff !important; }
 .dark-mode .accordion { background-color: transparent; }
-.dark-mode .list-group-item { background-color: #10182b; color: #e6eef6; border-color: rgba(255,255,255,0.08); }
+.dark-mode .list-group-item { 
+  background-color: #10182b; 
+  color: #d6e2ff; 
+  border-color: rgba(255,255,255,0.08); 
+}
+
+/* Dark mode profile photo border */
+.dark-mode .profile-photo { border-color: #6ea8fe; }
+
+/* Dark mode table elements */
+.dark-mode table { color: #d6e2ff; }
+.dark-mode th { color: #ffffff; }
+.dark-mode td { color: #d6e2ff; }
+
+/* Dark mode work experience */
+.dark-mode .work-item { 
+  background-color: transparent; 
+  color: #d6e2ff; 
+}
+.dark-mode .work-item h5 { color: #ffffff !important; }
+.dark-mode .work-item .small { color: #9fb4d8; }
+
+/* Dark mode hobby cards hover */
+.dark-mode #hobbies .card:hover {
+  box-shadow: 0 8px 16px rgba(110,168,254,0.25);
+}
+
+/* Dark mode icon colors */
+.dark-mode .bi { color: #9ec1ff; }
 
 
 /* Navbar toggle icon spacing */
@@ -188,6 +306,12 @@ body { padding-top: 72px; }
 .year-gpa { font-weight: 600; color: #192a51; }
 .year-gpa span { color: #967aa1; cursor: pointer; }
 .year-gpa span.placeholder { color: #aaa1c8; cursor: default; }
+
+/* Dark mode GPA and year card headings */
+.dark-mode .year-gpa { color: #ffffff; }
+.dark-mode .year-gpa span { color: #9ec1ff; }
+.dark-mode .year-card h4 { color: #ffffff !important; }
+.dark-mode .year-card h5 { color: #ffffff !important; }
 
 /* Show dropdown on hover for larger screens */
 @media (min-width: 992px) {
@@ -278,6 +402,10 @@ body {
         #education h2 { font-weight: 700; margin: 0 0 1rem 0; color: #192a51; }
         #education { scroll-margin-top: 80px; }
         .accordion { margin-bottom: 2rem; }
+
+        /* Dark mode education section */
+        .dark-mode #education h2 { color: #ffffff !important; }
+        .dark-mode h2, .dark-mode h3 { color: #ffffff !important; }
 
 /* Light mode color overrides for Bootstrap components */
 .btn-primary {
@@ -411,5 +539,6 @@ hr {
   box-shadow: 0 8px 16px rgba(150,122,161,0.3);
 }
 .dark-mode #hobbies .card:hover {
-  box-shadow: 0 8px 16px rgba(0,0,0,0.5);
+  transform: translateY(-10px);
+  box-shadow: 0 8px 20px rgba(110,168,254,0.3);
 }
