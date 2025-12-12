@@ -42,6 +42,46 @@ function syncDarkToggleIcon() {
     } catch (e) { /* no-op */ }
 }
 
+// SMOOTH SCROLL TO SECTIONS
+document.addEventListener('DOMContentLoaded', () => {
+    // Get all navbar links that point to sections with #
+    const navLinks = document.querySelectorAll('.navbar-nav a[href^="#"]');
+    
+    navLinks.forEach(link => {
+        link.addEventListener('click', function(e) {
+            const href = this.getAttribute('href');
+            // Only handle links that start with # and aren't just #
+            if (href && href !== '#' && href.startsWith('#')) {
+                const targetId = href.substring(1);
+                const targetElement = document.getElementById(targetId);
+                
+                if (targetElement) {
+                    e.preventDefault();
+                    // Smooth scroll to the target element
+                    targetElement.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                    
+                    // Close mobile menu if open
+                    const navbarCollapse = document.querySelector('.navbar-collapse');
+                    if (navbarCollapse && navbarCollapse.classList.contains('show')) {
+                        const bsCollapse = new bootstrap.Collapse(navbarCollapse, {
+                            toggle: false
+                        });
+                        bsCollapse.hide();
+                    }
+                    
+                    // Update URL hash without jumping
+                    if (history.pushState) {
+                        history.pushState(null, null, href);
+                    }
+                }
+            }
+        });
+    });
+});
+
 // SKILLS PROGRESS
 function animateSkills() {
     const htmlBar = document.getElementById('htmlBar');
