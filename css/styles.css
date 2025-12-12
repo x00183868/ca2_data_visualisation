@@ -401,3 +401,15 @@ hr {
 .dark-mode hr {
   border-top-color: rgba(255,255,255,0.12);
 }
+
+/* Hobby cards hover animation */
+#hobbies .card {
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+#hobbies .card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 8px 16px rgba(150,122,161,0.3);
+}
+.dark-mode #hobbies .card:hover {
+  box-shadow: 0 8px 16px rgba(0,0,0,0.5);
+}
